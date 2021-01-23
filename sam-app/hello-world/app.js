@@ -1,8 +1,5 @@
 const { CanvasRenderService } = require('chartjs-node-canvas')
 
-const mime = 'image/png'
-const encoding = 'base64'
-
 exports.lambdaHandler = async (event, context) => {
   const options = {
     elements: {
@@ -43,6 +40,5 @@ exports.lambdaHandler = async (event, context) => {
     },
     options
   }
-  const buffer = await renderService.renderToBuffer(params)
-  return `data:${mime};${encoding},${buffer.toString('base64')}`
+  return await renderService.renderToDataURL(params)
 }
