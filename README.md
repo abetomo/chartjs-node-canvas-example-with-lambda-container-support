@@ -1,5 +1,12 @@
 # chartjs-node-canvas-example-with-lambda-container-support
 
+## sam version
+
+```
+% sam --version
+SAM CLI, version 1.15.0
+```
+
 ## sam init
 
 ```
