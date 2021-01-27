@@ -16,7 +16,7 @@ Resources:
     Properties:
       PackageType: Image
     Metadata:
-      DockerTag: nodejs12.x-v1
+      DockerTag: sam-app-nodejs12.x-v1
       DockerContext: ./hello-world
       Dockerfile: Dockerfile
 
