@@ -1,4 +1,4 @@
-const { CanvasRenderService } = require('chartjs-node-canvas')
+const { ChartJSNodeCanvas } = require('chartjs-node-canvas')
 
 exports.lambdaHandler = async (event, context) => {
   const options = {
@@ -18,7 +18,9 @@ exports.lambdaHandler = async (event, context) => {
     }
   }
 
-  const renderService = new CanvasRenderService(800, 600)
+  const width = 800 // px
+  const height = 600 // px
+  const chartJSNodeCanvas = new ChartJSNodeCanvas({ width, height })
   const params = {
     type: 'line',
     data: {
@@ -40,5 +42,5 @@ exports.lambdaHandler = async (event, context) => {
     },
     options
   }
-  return await renderService.renderToDataURL(params)
+  return await chartJSNodeCanvas.renderToDataURL(params)
 }
