@@ -8,7 +8,13 @@ exports.lambdaHandler = async (event, context) => {
       }
     },
     scales: {
-      yAxes: [{ display: false }],
+      yAxes: [
+        {
+          ticks: {
+            display: false
+          }
+        }
+      ],
       xAxes: [
         {
           display: true,
